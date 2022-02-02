@@ -33,7 +33,7 @@ public class BatController {
 	}
 	
 	// Create
-	@PostMapping
+	@PostMapping("/create")
 	public ResponseEntity<Bat> createBat(@RequestBody Bat bat) {
 		Bat savedBat = service.create(bat);
 		
@@ -45,7 +45,7 @@ public class BatController {
 	}
 	
 	// Update
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public ResponseEntity<Bat> updateBat(@PathVariable("id") long id, @Valid @RequestBody Bat bat) {
 		Bat updatedBat = service.update(id, bat);
 		
@@ -55,14 +55,14 @@ public class BatController {
 	}
 	
 	// Delete
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<?> deleteUser(@PathVariable("id") long id) {
 		service.delete(id);
 		return ResponseEntity.accepted().build();
 	}
 	
 	// Read All
-	@GetMapping
+	@GetMapping("/readAll")
 	public ResponseEntity<List<Bat>> getBats() {
 		ResponseEntity<List<Bat>> bats = ResponseEntity.ok(service.getAll());
 		return bats;
