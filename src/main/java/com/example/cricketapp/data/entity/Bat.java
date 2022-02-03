@@ -7,11 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "Bats")
@@ -22,27 +18,24 @@ public class Bat {
 	private Long id;
 	
 	@NotNull
-	@Length(min = 1, message = "Make must be stated")
 	private String make;
+	
 	@NotNull
-	@Length(min = 1, message = "Model must be stated")
 	private String model;
 	
-	private float weight;
+	private double weight;
 	
-	@Max(2100)
-	@Min(1900)
 	private int age;
 	
-	public Bat(String make, String model, float weight, int age) {
+	public Bat(String make, String model, double weight, int age) {
 		this.make = make;
 		this.model = model;
 		this.weight = weight;
 		this.age = age;
 	}
 	
-	public Bat(Long id, String make, String model, float weight, int age) {
-		this.id = id;
+	public Bat(long nextNewElementsId, String make, String model, double weight, int age) {
+		this.id = (long) nextNewElementsId;
 		this.make = make;
 		this.model = model;
 		this.weight = weight;
@@ -77,12 +70,12 @@ public class Bat {
 		this.model = model;
 	}
 
-	public float getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(float weight) {
-		this.weight = weight;
+	public void setWeight(double d) {
+		this.weight = d;
 	}
 
 	public int getAge() {
@@ -114,7 +107,7 @@ public class Bat {
 		Bat other = (Bat) obj;
 		return age == other.age && Objects.equals(id, other.id) && Objects.equals(make, other.make)
 				&& Objects.equals(model, other.model)
-				&& Float.floatToIntBits(weight) == Float.floatToIntBits(other.weight);
+				&& Float.floatToIntBits((float) weight) == Float.floatToIntBits((float) other.weight);
 	}
 
 
