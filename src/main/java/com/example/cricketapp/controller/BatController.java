@@ -56,7 +56,7 @@ public class BatController {
 	
 	// Delete
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteUser(@PathVariable("id") long id) {
+	public ResponseEntity<?> deleteBat(@PathVariable("id") long id) {
 		service.delete(id);
 		return ResponseEntity.accepted().build();
 	}

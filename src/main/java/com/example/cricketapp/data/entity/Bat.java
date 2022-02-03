@@ -7,11 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table(name = "Bats")
@@ -22,16 +18,13 @@ public class Bat {
 	private Long id;
 	
 	@NotNull
-	//@Length(min = 1, message = "Make must be stated")
 	private String make;
+	
 	@NotNull
-	//@Length(min = 1, message = "Model must be stated")
 	private String model;
 	
 	private double weight;
 	
-	//@Max(2100)
-	//@Min(1900)
 	private int age;
 	
 	public Bat(String make, String model, double weight, int age) {
@@ -41,8 +34,8 @@ public class Bat {
 		this.age = age;
 	}
 	
-	public Bat(Long id, String make, String model, float weight, int age) {
-		this.id = id;
+	public Bat(long nextNewElementsId, String make, String model, double weight, int age) {
+		this.id = (long) nextNewElementsId;
 		this.make = make;
 		this.model = model;
 		this.weight = weight;
