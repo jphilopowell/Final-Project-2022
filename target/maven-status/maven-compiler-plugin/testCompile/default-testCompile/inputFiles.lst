@@ -1,1 +1,5 @@
 /Users/jppmac/eclipse-workspace/cricket-app/src/test/java/com/example/cricketapp/CricketAppApplicationTests.java
+/Users/jppmac/eclipse-workspace/cricket-app/src/test/java/com/example/cricketapp/controller/BatControllerWebIntegrationTest.java
+/Users/jppmac/eclipse-workspace/cricket-app/src/test/java/com/example/cricketapp/controller/BatControllerSystemIntegrationTest.java
+/Users/jppmac/eclipse-workspace/cricket-app/src/test/java/com/example/cricketapp/service/BatServiceUnitTest.java
+/Users/jppmac/eclipse-workspace/cricket-app/src/test/java/com/example/cricketapp/service/BatServiceIntegrationTest.java
