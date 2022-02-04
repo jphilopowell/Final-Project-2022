@@ -1,0 +1,5 @@
+com/example/cricketapp/service/BatServiceUnitTest.class
+com/example/cricketapp/controller/BatControllerWebIntegrationTest.class
+com/example/cricketapp/CricketAppApplicationTests.class
+com/example/cricketapp/controller/BatControllerSystemIntegrationTest.class
+com/example/cricketapp/service/BatServiceIntegrationTest.class

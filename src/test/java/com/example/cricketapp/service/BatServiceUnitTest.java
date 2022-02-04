@@ -44,35 +44,50 @@ public class BatServiceUnitTest {
 	// Test get all 
 	@Test
 	public void getAllBatsTest() {
+		
 		when(repo.findAll()).thenReturn(bats);
+		
 		assertThat(service.getAll()).isEqualTo(bats);
+		
 		verify(repo).findAll();
 	}
 	
 	// Test get by Id
 	@Test
 	public void getBatbyIdTest() {
+		
 		long id = expectedBat.getId();
+		
 		when(repo.findById(id)).thenReturn(Optional.of(expectedBat));
+		
 		assertThat(service.getById(id)).isEqualTo(expectedBat);
+		
 		verify(repo).findById(id);
 	}
 	
 	// Test Create
 	@Test
 	public void createBatTest() {
+		
 		when(repo.save(expectedBatNoId)).thenReturn(expectedBat);
+		
 		assertThat(service.create(expectedBatNoId)).isEqualTo(expectedBat);
+		
 		verify(repo).save(expectedBatNoId);
 	}
 	
 	// Test Delete
 	@Test
 	public void deleteBatTest() {
+		
 		long id = expectedBat.getId();
+		
 		when(repo.existsById(id)).thenReturn(true);
+		
 		service.delete(id);
+		
 		verify(repo).existsById(id);
+		
 		verify(repo).deleteById(id);
 	}
 }
